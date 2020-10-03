@@ -1,0 +1,24 @@
+.wrap {
+  @include sm {
+    flex-direction: row;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  background-color: antiquewhite;
+}
+
+.main {
+  flex: auto;
+  min-width: 320px;
+  padding: 20px 0 0 20px;
+
+  background-color:red;
+
+  &__block {
+    background: #FFFFFF;
+    margin: 0 20px 20px 0;
+  }
+}

@@ -1099,6 +1099,40 @@ li {
   border-top: 6px solid #FD5670;
 }
 
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  background-color: antiquewhite;
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  min-width: 320px;
+  padding: 20px 0 0 20px;
+  background-color: red;
+}
+
+.main__block {
+  background: #FFFFFF;
+  margin: 0 20px 20px 0;
+}
+
 .nav {
   background: -webkit-gradient(linear, left bottom, left top, from(#FD5670), to(#EC6E54));
   background: linear-gradient(to top, #FD5670, #EC6E54);
