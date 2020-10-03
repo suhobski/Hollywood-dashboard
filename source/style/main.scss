@@ -1,0 +1,31 @@
+@import './config/normalize';
+@import './config/variables';
+@import './config/mixins';
+@import './config/baseLayout';
+
+@import './components/aside';
+@import './components/footer';
+@import './components/header';
+@import './components/main';
+@import './components/nav';
+
+@font-face {
+  font-family: 'Deftone Stylus';
+  src: url(../fonts/deftone-stylus.ttf);
+  font-weight: regular;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@import './config/media';
+

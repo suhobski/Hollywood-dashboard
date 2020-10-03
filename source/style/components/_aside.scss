@@ -1,0 +1,289 @@
+.aside {
+  
+  display: flex;
+  flex-direction: column;
+  max-width: 271px;
+  max-height: 830px;
+  background: #FFFFFF;
+
+  @include sm {
+    flex: 0 1 768px;
+    max-width: 768px;
+  }
+  
+}
+
+.menu {
+  @include background-gradient(to right);
+  display: flex;
+
+  & > div {
+    position: relative;
+
+    flex: 1 1 91px;
+    height: 48px;
+  }
+
+  & > div:hover,
+  & > div:active {
+    background-color: #C43E5B;
+    cursor: pointer;
+  }
+
+  & > div:hover::after {
+    content: '';
+
+    position: absolute;
+    bottom: -6px;
+    left: 50%-6;
+
+    width: 0;
+    height: 0;
+
+    border-top: 6px solid #C43E5B;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+  }
+
+
+  .menu__btn--users {
+    background: url(../img/aside/menu/users.png) no-repeat center;
+  }
+  .menu__btn--chat {
+    background: url(../img/aside/menu/chat-white.png) no-repeat center;
+  }
+  
+  .menu__btn--like {
+    background: url(../img/aside/menu/like.png) no-repeat center;
+  }
+}
+
+// actors
+.actors-list {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  padding: 5px 20px 5px 0;
+
+  background-color: #fff;
+
+  @include sm {
+    max-height: 168px;
+  }
+  
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex: auto;
+    min-width: 170px;
+    flex-basis: 244px;
+    height: 83px;
+    padding-left: 20px;
+
+    border-bottom: 2px solid #F1F1F1;
+  }
+  
+  &__item:last-child {
+    border: none;
+  }
+
+  &__about {
+    flex-grow: 1;
+    margin-left: 18px;
+    line-height: 10px;
+  }
+      
+  &__name {
+    @include text-gradient(to right);
+
+    display: block;
+    flex-shrink: 1;
+    padding-bottom: 9px;
+
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  &__position{
+    font-size: 10px;
+    color: #BFBFBF;
+    line-height: 13px;
+  }
+
+  &__chat {
+    width: 20px;
+    height: 16px;
+
+    background: url(../img/aside/actors/chat-grey.png) no-repeat center;
+    
+  }
+}
+
+// Search
+.search {
+  flex: 0 0 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  border-top: 2px solid #F1F1F1;
+  border-bottom: 2px solid #F1F1F1;
+
+  @include sm {
+    justify-content: flex-start;
+  }
+
+  &__input {
+    width: 163px;
+    height: 26px;
+
+    font-size: 12px;
+    font-weight: 300;
+    color: #000000;
+
+    border: none;
+    border-bottom: 2px solid #F1F1F1;
+  }
+
+  &__input::placeholder {
+    font-size: 10px;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #C0C0C0;
+
+    outline: none;
+  }
+
+  &__submit {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+
+    border: none;
+    background: url(../img/aside/search/search.png) no-repeat center;
+    cursor: pointer;
+  }
+
+  &__edit {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+
+    border: none;
+    background: url(../img/aside/search/edit.png) no-repeat center;
+    cursor: pointer;
+  }
+}
+
+.featured-companies {
+  padding: 30px 40px 15px;
+
+  @include sm {
+    padding-top: 15px;
+  }
+
+  &__title {
+    @include main-section-title;
+    font-size: 14px;
+
+    @include sm {
+      margin-bottom: 15px; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+
+    @include sm {
+      justify-content: center;
+    }
+  }
+
+  &__list > li {
+    @include sm {
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+
+      margin-bottom: 0;
+    }
+
+    width: 55px;
+    height: 55px;
+    margin-bottom: 15px;
+
+    cursor: pointer;
+  }
+
+  &__list > li:not(:last-child) {
+    @include sm {
+      margin-right: 10px;
+    }
+  }
+
+
+  &__link--rdio {
+    background: url(../img/aside/featured-companys/rdio.png);
+  }
+
+  &__link--css3 {
+    background: url(../img/aside/featured-companys/css3.png);
+  }
+
+  &__link--deviantart {
+    background: url(../img/aside/featured-companys/deviantart.png);
+  }
+
+  &__link--xing {
+    background: url(../img/aside/featured-companys/xing.png);
+  }
+
+  &__link--vimeo {
+    background: url(../img/aside/featured-companys/vimeo.png);
+  }
+
+  &__link--vk {
+    background: url(../img/aside/featured-companys/vk.png);
+  }
+}
+
+
+
+// p {
+//   @include primary-text;
+// }
+
+// .block {
+//   @include flexible(center, center, row, wrap);
+// }
+
+// .block--inner {
+//   @extend .block;
+//   flex-wrap: nowrap;
+// }
+
+// .aside {
+//   color: red;
+
+//   &__item {
+    
+//     @include sm {
+//       color: yellow;
+//     }
+
+//     @include md {
+//       color: cadetblue;
+//     }
+
+//     @include lg {
+//       font-size: $primary-color;
+//     }
+
+//   }
+// }

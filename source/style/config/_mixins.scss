@@ -1,0 +1,74 @@
+@mixin primary-text {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  color: $primary-color;
+  line-height: 2;
+}
+
+@mixin flexible($axis-x, $axis-y, $direction, $wrap) {
+  display: flex;
+  justify-content: $axis-x;
+  align-items: $axis-y;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+// Background gradient
+@mixin background-gradient($direction) {
+  background: linear-gradient($direction, $primary-color, $second-color);
+}
+
+//Text gradient
+@mixin text-gradient($direction) {
+  background: linear-gradient($direction, $primary-color, $second-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin main-section-title {
+  margin-bottom: 30px;
+  
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #767676;
+  text-transform: capitalize;
+}
+
+// Media
+// Extra Small devices
+@mixin xs {
+  @media (max-width: #{$screen-xs-max}) {
+      @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+      @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg-max}) {
+      @content;
+  }
+}
