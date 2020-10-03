@@ -641,7 +641,7 @@ li {
   margin-bottom: 30px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
-  font-size: 0.7em;
+  font-size: 14px;
   font-weight: 700;
   color: #767676;
   text-transform: capitalize;
@@ -1112,25 +1112,198 @@ li {
 
 @media (max-width: 768px) {
   .wrap {
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
 .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
   min-width: 320px;
   padding: 20px 0 0 20px;
-  background-color: red;
+  background-color: grey;
 }
 
 .main__block {
   background: #FFFFFF;
   margin: 0 20px 20px 0;
+}
+
+.progress {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  max-width: 704px;
+  min-width: 300px;
+  max-height: 266px;
+  padding: 30px;
+}
+
+.progress__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.progress__title {
+  margin-bottom: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #767676;
+  text-transform: capitalize;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  text-align: left;
+}
+
+.progress__period {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #BFBFBF;
+  margin-left: 13px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.progress__period:hover, .progress__period:active {
+  background: -webkit-gradient(linear, left top, right top, from(#FD5670), to(#EC6E54));
+  background: linear-gradient(to right, #FD5670, #EC6E54);
+  padding: 8px 17px;
+  color: #FFFFFF;
+  border-radius: 17px;
+}
+
+.progress__more-information {
+  position: relative;
+  width: 5px;
+  height: 21px;
+  padding-top: 8px;
+  margin-left: 18px;
+}
+
+@media (max-width: 768px) {
+  .progress__more-information {
+    margin: 0 10px;
+  }
+}
+
+.progress__more-information > span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #BFBFBF;
+  border-radius: 50%;
+}
+
+.progress__more-information > span::before {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #BFBFBF;
+}
+
+.progress__more-information > span::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #BFBFBF;
+}
+
+.progress__graph {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-right: 30px;
+}
+
+.progress__count-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.progress__count {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #BFBFBF;
+  margin: 0 30px 25px 0;
+}
+
+.progress__wrap-inner {
+  max-width: 580px;
+  padding-top: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+.progress__picture {
+  max-width: 580px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.progress__period-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.progress__month {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #BFBFBF;
+  margin: 15px;
+}
+
+.revenue {
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav {

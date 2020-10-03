@@ -1,6 +1,6 @@
 .wrap {
   @include sm {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   display: flex;
@@ -11,14 +11,152 @@
 }
 
 .main {
+  display: flex;
   flex: auto;
   min-width: 320px;
   padding: 20px 0 0 20px;
 
-  background-color:red;
+  background-color:grey;
 
   &__block {
     background: #FFFFFF;
     margin: 0 20px 20px 0;
   }
+}
+
+.progress {
+  flex: auto;
+  max-width: 704px;
+  min-width: 300px;
+  max-height: 266px;
+  padding: 30px;
+
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    @include main-section-title;
+    
+    flex: auto;
+
+    text-align: left;
+  }
+
+  &__period {
+    @include main-text;
+
+    margin-left: 13px;
+
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s ease;
+  }
+
+  &__period:hover,
+  &__period:active {
+    @include background-gradient(to right);
+
+    padding: 8px 17px;
+    
+    color: #FFFFFF;
+    border-radius: 17px;
+  }
+
+  &__more-information {
+    position: relative;
+
+    width: 5px;
+    height: 21px;
+    padding-top: 8px;
+    margin-left: 18px;
+
+    @include sm {
+      margin: 0 10px;
+    }
+  }
+
+  &__more-information > span {
+    display: block;
+    width: 5px;
+    height: 5px;
+
+    background: #BFBFBF;
+    border-radius: 50%;
+  }
+
+  &__more-information > span::before {
+    position: absolute;
+    top: 0;
+
+    content: "";
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+    background: #BFBFBF;
+  }
+
+  &__more-information > span::after {
+    position: absolute;
+    bottom: 0;
+
+    content: "";
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+    background: #BFBFBF;
+  }
+
+  &__graph {
+    display: flex;
+    width: 100%;
+    margin-right: 30px;
+  }
+
+  &__count-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__count {
+    @include main-text;
+
+    margin: 0 30px 25px 0;
+  }
+
+  &__wrap-inner {
+    max-width: 580px;
+    padding-top: 10px;
+    flex: auto;
+  }
+
+  &__picture {
+    max-width: 580px;
+    object-fit: contain;
+  }
+
+  &__period-wrap {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__month {
+    @include main-text;
+
+    margin: 15px;
+  }
+
+}
+
+.revenue {
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

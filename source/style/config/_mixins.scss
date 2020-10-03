@@ -38,10 +38,18 @@
   
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
-  font-size: 0.7em;
+  font-size: 14px;
   font-weight: 700;
   color: #767676;
   text-transform: capitalize;
+}
+
+@mixin main-text {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #BFBFBF;
 }
 
 // Media
