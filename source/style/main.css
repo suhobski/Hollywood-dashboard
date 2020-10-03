@@ -1326,7 +1326,7 @@ li {
   background: linear-gradient(to right, #FD5670, #EC6E54);
   display: block;
   position: fixed;
-  visibility: visible;
+  visibility: hidden;
   top: 40px;
   right: -100vw;
   width: 100vw;

@@ -181,7 +181,7 @@
     @include background-gradient(to right);
     display: block;
     position: fixed;
-    visibility: visible; // hidden;
+    visibility: hidden; // hidden;
     top: 40px;
     right: -100vw;
   
