@@ -33,6 +33,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+@mixin text-gradient-secondary($direction) {
+  background: linear-gradient($direction, $blue, $purple);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @mixin main-section-title {
   margin-bottom: 30px;
   
