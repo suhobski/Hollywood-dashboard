@@ -67,11 +67,15 @@
 
       .options__button--planet-earth::before {
         @include background-gradient(to right);
+        @include xs {
+          top: 10%;
+          right: 10%;
+        }
 
         content: "";
         position: absolute;
-        top: 18px;
-        right: 16px;
+        top: 26%;
+        right: 26%;
 
         width: 6px;
         height: 6px;
@@ -183,16 +187,15 @@
       }
 
       &__more-information {
+        @include sm {
+          display: none;;
+        }
         position: relative;
 
         width: 5px;
         height: 21px;
         padding-top: 8px;
         margin: 0 18px;
-
-        @include sm {
-          margin: 0 10px;
-        }
       }
 
       &__more-information > span {
@@ -331,5 +334,9 @@
       border-right: 3px solid transparent;
       border-top: 6px solid $primary-color;
     }
-  } 
+  }
+  
+  .card:last-child {
+    margin-right: 0;
+  }
 }
