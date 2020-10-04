@@ -383,15 +383,20 @@ li {
 }
 
 .container {
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
+  max-width: 1296px;
   margin-left: 70px;
   background-color: #EBEBEB;
 }
 
 @media (max-width: 768px) {
   .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding-top: 40px;
     margin-left: 0;
   }
@@ -412,9 +417,6 @@ li {
 
 @media (max-width: 768px) {
   .aside {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 768px;
-            flex: 0 1 768px;
     max-width: 768px;
   }
 }
@@ -430,8 +432,8 @@ li {
 .menu > div {
   position: relative;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 91px;
-          flex: 1 1 91px;
+      -ms-flex: auto;
+          flex: auto;
   height: 48px;
 }
 
@@ -499,7 +501,7 @@ li {
   -ms-flex-preferred-size: 244px;
       flex-basis: 244px;
   height: 83px;
-  padding-left: 20px;
+  margin-left: 20px;
   border-bottom: 2px solid #F1F1F1;
 }
 
@@ -557,6 +559,7 @@ li {
   padding: 0 20px;
   border-top: 2px solid #F1F1F1;
   border-bottom: 2px solid #F1F1F1;
+  background: #FFFFFF;
 }
 
 @media (max-width: 768px) {
@@ -610,18 +613,22 @@ li {
 }
 
 .search__submit {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   width: 20px;
   height: 20px;
-  margin-left: 20px;
+  margin-left: 5px;
   border: none;
   background: url(../img/aside/search/search.png) no-repeat center;
   cursor: pointer;
 }
 
 .search__edit {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   width: 20px;
   height: 20px;
-  margin-left: 20px;
+  margin-left: 5px;
   border: none;
   background: url(../img/aside/search/edit.png) no-repeat center;
   cursor: pointer;
@@ -629,6 +636,7 @@ li {
 
 .featured-companies {
   padding: 30px 40px 15px;
+  background: #FFFFFF;
 }
 
 @media (max-width: 768px) {
@@ -807,11 +815,18 @@ li {
   background: linear-gradient(to right, #FD5670, #EC6E54);
   content: "";
   position: absolute;
-  top: 18px;
-  right: 16px;
+  top: 26%;
+  right: 26%;
   width: 6px;
   height: 6px;
   border-radius: 50%;
+}
+
+@media (max-width: 576px) {
+  .header .options__item .options__button--planet-earth::before {
+    top: 10%;
+    right: 10%;
+  }
 }
 
 .header .options__item--search {
@@ -959,7 +974,7 @@ li {
 
 @media (max-width: 768px) {
   .header .options .person__more-information {
-    margin: 0 10px;
+    display: none;
   }
 }
 
@@ -1099,8 +1114,8 @@ li {
   border-top: 6px solid #FD5670;
 }
 
-html {
-  background: #EDEDED;
+.header .card:last-child {
+  margin-right: 0;
 }
 
 .main {
@@ -1109,73 +1124,67 @@ html {
   display: flex;
 }
 
-.content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1.5 1030px;
-          flex: 1 1.5 1030px;
-  padding: 0.5em;
+@media (max-width: 768px) {
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
-.monthly-progress {
+.main__first-line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+}
+
+@media (max-width: 992px) {
+  .main__first-line {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.content {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  padding: 0.5em;
+  background: #EDEDED;
+}
+
+.progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-flex: 5;
-      -ms-flex: 5 5 400px;
-          flex: 5 5 400px;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  max-width: 1000px;
+  min-height: 266px;
+  padding: 30px;
   margin: 0.5em;
-  max-height: 266px;
-  background-color: #FFFFFF;
+  overflow-x: scroll;
+  background: #FFFFFF;
 }
 
-.monthly-progress__header {
+.progress__head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  width: 100%;
-  padding: 2em 2em 1.5em 2em;
 }
 
-.monthly-progress__title {
+.progress__title, .shipments__title {
   margin-bottom: 30px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
@@ -1183,99 +1192,149 @@ html {
   font-weight: 700;
   color: #767676;
   text-transform: capitalize;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  text-align: left;
 }
 
-.monthly-progress__settings {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.monthly-progress__graph {
-  width: 582px;
-  padding: 2em;
-  overflow-x: scroll;
-}
-
-.monthly-progress__btn-month, .monthly-progress__btn-day, .monthly-progress__btn-year {
-  display: block;
-  padding: 4px 12px;
+.progress__period {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #BFBFBF;
+  margin-left: 13px;
+  background: none;
   border: none;
-  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.progress__period:hover, .progress__period:active {
   background: -webkit-gradient(linear, left top, right top, from(#FD5670), to(#EC6E54));
   background: linear-gradient(to right, #FD5670, #EC6E54);
+  padding: 8px 17px;
   color: #FFFFFF;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 12px;
-  cursor: pointer;
+  border-radius: 17px;
 }
 
-.monthly-progress__btn-day, .monthly-progress__btn-year {
-  background: none;
-  color: #BFBFBF;
-}
-
-.monthly-progress__btn-day {
-  padding: 4px 0;
-  margin: 0 10px;
-}
-
-.monthly-progress__btn-year {
-  padding: 4px 0;
-}
-
-.monthly-progress__btn-more {
+.progress__more-information {
+  position: relative;
   width: 5px;
-  margin-left: 1em;
-  cursor: pointer;
+  height: 21px;
+  padding-top: 8px;
+  margin-left: 18px;
 }
 
-.monthly-progress__btn-more-elem {
-  height: 3px;
-  width: 3px;
+@media (max-width: 768px) {
+  .progress__more-information {
+    margin: 0 10px;
+  }
+}
+
+.progress__more-information > span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #BFBFBF;
   border-radius: 50%;
-  background-color: #BFBFBF;
 }
 
-.monthly-progress__btn-more-elem:nth-child(2) {
-  margin: 2px 0;
+.progress__more-information > span::before {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #BFBFBF;
 }
 
-.revenue {
+.progress__more-information > span::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #BFBFBF;
+}
+
+.progress__graph {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  min-width: 100%;
+  height: auto;
+}
+
+.progress__count-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+}
+
+.progress__count {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #BFBFBF;
+  margin: 0 30px 20px 0;
+}
+
+.progress__wrap-inner {
+  padding-top: 10px;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 265px;
-          flex: 1 1 265px;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+.progress__picture {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 25px;
+}
+
+.progress__period-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.progress__month {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #BFBFBF;
+}
+
+.revenue {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 265px;
+          flex: 1 0 265px;
+  max-width: 265px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1283,6 +1342,12 @@ html {
   margin: 0.5em;
   padding: 2em 2em 2em 2em;
   background-color: #FFFFFF;
+}
+
+@media (max-width: 992px) {
+  .revenue {
+    max-width: 1000px;
+  }
 }
 
 .revenue__title {
@@ -1300,16 +1365,16 @@ html {
   width: 124px;
 }
 
-.revenue__spread, .progress__spread {
+.revenue__spread, .scale__spread {
   position: relative;
 }
 
-.revenue__buy-value, .progress__buy-value, .shipments__buy-value, .revenue__sell-value, .progress__sell-value, .shipments__sell-value {
+.revenue__buy-value, .scale__buy-value, .revenue__sell-value, .scale__sell-value {
   font-size: 12px;
   color: #BFBFBF;
 }
 
-.revenue__buy-value::before, .progress__buy-value::before, .shipments__buy-value::before {
+.revenue__buy-value::before, .scale__buy-value::before {
   content: "";
   position: relative;
   bottom: 8px;
@@ -1321,7 +1386,7 @@ html {
   border-bottom: 6px solid #A889E9;
 }
 
-.revenue__sell-value::before, .progress__sell-value::before, .shipments__sell-value::before {
+.revenue__sell-value::before, .scale__sell-value::before {
   content: "";
   position: relative;
   top: 10px;
@@ -1703,31 +1768,32 @@ html {
   margin: 0.5em;
 }
 
-.progress, .shipments {
+.scale {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-flex: 3;
-      -ms-flex: 3 3 auto;
-          flex: 3 3 auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 3 auto;
+          flex: 0 3 auto;
+  max-width: 705px;
   margin-right: 0.5em;
-  padding: 2em 2em 1.3em 2em;
+  padding: 30px;
   background-color: #FFFFFF;
 }
 
-.progress__title, .shipments__title {
+.scale__title {
   margin-bottom: 30px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
@@ -1736,18 +1802,19 @@ html {
   color: #767676;
   text-transform: capitalize;
   margin-bottom: 2em;
+  text-align: left;
 }
 
-.progress__graph {
-  width: 140px;
-  margin-bottom: 1em;
+.scale__graph {
+  width: 100%;
+  max-width: 575px;
 }
 
-.progress__spread {
+.scale__spread {
   margin-bottom: 0.3em;
 }
 
-.progress__amount, .shipments__amount {
+.scale__amount {
   background: -webkit-gradient(linear, left top, right top, from(#708AE6), to(#8841AF));
   background: linear-gradient(to right, #708AE6, #8841AF);
   background-clip: text;
@@ -1797,14 +1864,6 @@ html {
   -webkit-text-fill-color: transparent;
   display: inline-block;
   margin: 0 auto;
-}
-
-.aside {
-  -ms-flex-preferred-size: 270px;
-      flex-basis: 270px;
-  min-width: 170px;
-  min-height: 250px;
-  background-color: #008080;
 }
 
 .nav {

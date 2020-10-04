@@ -7,7 +7,6 @@
   background: #FFFFFF;
 
   @include sm {
-    flex: 0 1 768px;
     max-width: 768px;
   }
   
@@ -44,7 +43,6 @@
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
   }
-
 
   .menu__btn--users {
     background: url(../img/aside/menu/users.png) no-repeat center;
@@ -257,38 +255,3 @@
     background: url(../img/aside/featured-companys/vk.png);
   }
 }
-
-
-
-// p {
-//   @include primary-text;
-// }
-
-// .block {
-//   @include flexible(center, center, row, wrap);
-// }
-
-// .block--inner {
-//   @extend .block;
-//   flex-wrap: nowrap;
-// }
-
-// .aside {
-//   color: red;
-
-//   &__item {
-    
-//     @include sm {
-//       color: yellow;
-//     }
-
-//     @include md {
-//       color: cadetblue;
-//     }
-
-//     @include lg {
-//       font-size: $primary-color;
-//     }
-
-//   }
-// }
