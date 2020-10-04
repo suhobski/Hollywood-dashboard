@@ -20,7 +20,7 @@
   & > div {
     position: relative;
 
-    flex: 1 1 91px;
+    flex: auto;
     height: 48px;
   }
 
@@ -80,7 +80,7 @@
     min-width: 170px;
     flex-basis: 244px;
     height: 83px;
-    padding-left: 20px;
+    margin-left: 20px;
 
     border-bottom: 2px solid #F1F1F1;
   }
@@ -131,6 +131,7 @@
 
   border-top: 2px solid #F1F1F1;
   border-bottom: 2px solid #F1F1F1;
+  background: #FFFFFF;
 
   @include sm {
     justify-content: flex-start;
@@ -158,9 +159,10 @@
   }
 
   &__submit {
+    flex-shrink: 0;
     width: 20px;
     height: 20px;
-    margin-left: 20px;
+    margin-left: 5px;
 
     border: none;
     background: url(../img/aside/search/search.png) no-repeat center;
@@ -168,9 +170,10 @@
   }
 
   &__edit {
+    flex-shrink: 0;
     width: 20px;
     height: 20px;
-    margin-left: 20px;
+    margin-left: 5px;
 
     border: none;
     background: url(../img/aside/search/edit.png) no-repeat center;
@@ -180,6 +183,8 @@
 
 .featured-companies {
   padding: 30px 40px 15px;
+
+  background: #FFFFFF;
 
   @include sm {
     padding-top: 15px;
