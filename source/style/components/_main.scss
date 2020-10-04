@@ -16,9 +16,11 @@ html {
 
 .monthly-progress {
   @include flexible(center, flex-start, column, nowrap);
-  flex: 5 5 400px;
 
+  flex: 5 5 400px;
   margin: 0.5em;
+  max-height: 266px;
+
   background-color: #FFFFFF;
 
   &__header {
@@ -99,6 +101,10 @@ html {
   @include flexible(center, center, column, nowrap);
   flex: 1 1 265px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 266px;
   margin: 0.5em;
   padding: 2em 2em 2em 2em;
 
@@ -106,16 +112,17 @@ html {
 
   &__title {
       @include main-section-title;
+      margin: 0;
   }
 
   &__circle-graph {
       width: 124px;
-      margin: 31px 0 18px 0; 
+      // margin: 31px 0 18px 0; 
   }
 
   &__spread {  //try to @extend these
       position: relative;
-      margin-bottom: 8px;
+    //   margin-bottom: 8px;
   }
 
   &__buy-value,
