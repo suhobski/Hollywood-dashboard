@@ -12,6 +12,15 @@
       flex-direction: column;
     }
   }
+
+  &__second-line {
+    display: flex;
+    max-width: 1000px;
+    
+    @include md {
+      flex-direction: column;
+    }
+  }
 }
 
 .content {
@@ -231,24 +240,29 @@
 // Customers Feed **************************************************
 
 .customers-feed {
+  @include md {
+    max-width: 1000px;
+    max-height: 250px;
+  }
   @include flexible(flex-start, flex-start, column, nowrap);
   flex: 1 1 370px;
 
-  height: 495px;
+  max-width: 467px;
+  max-height: 508px;
   margin: 0.5em;
-  padding: 2em;
+  padding: 30px;
   background-color: #FFFFFF;
 
   overflow-y: scroll;
 
   &__title {
     @include main-section-title;
+    margin-bottom: 20px;
   }
 
   &__actor {
     @include flexible(space-between, flex-start, row, nowrap);
-
-    margin: 2em 0 0 0;
+    margin-top: 20px;
   }
 
   &__actor-photo-container {
@@ -262,7 +276,7 @@
   }
 
   &__date {
-    font-size: 7.1px;
+    font-size: 8px;
     word-spacing: 0.1px;
     color: #BFBFBF;
   }
@@ -273,35 +287,30 @@
     line-height: 1.6em;
   }
 
-  &__item {
+  &__item:first-child {
+    margin-bottom: 20px;
+  }
+
+  &__item p {
     display: block;
     padding: 1.2em;
+
     border: 1px solid #F1F1F1;
     background-color: #FCFCFC;
   }
 
-  &__item:nth-child(2) {
-    position: relative;
-    margin: 1.5em 0 1.5em 5em;
+  &__item:nth-child(n + 2) {
+    margin-left: 12px;
+    padding: 0 0 20px 13px;
+
+    border-left: 4px solid #F1F1F1; 
   }
 
-  &__item:nth-child(2)::before {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    left: -20px;
-    display: block;
-    height: 195px;
-    width: 4px;
-    background-color: #F1F1F1;
+  &__item:last-child {
+    padding-bottom: 0;
   }
 
-  &__item:nth-child(3) {
-    margin-left: 5em;
-  }
-
-  &__item>span {
+  &__item span {
     font-weight: 700;
     color: #777777;
   }
@@ -309,65 +318,82 @@
 
 // Wrapper for Todays Task, Progress and Shipments **************
 
-.wrapper {
-  @include flexible (center, center, row, wrap);
+.box {
+  @include md {
+    max-width: 1000px;
+    margin-right: 0;
+  }
   flex: 1 1 300px;
+  max-width: 501px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1em;
 
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 
 // Todays Task **************************************************
 
 .todays-task {
   @include flexible (flex-start, flex-start, column, nowrap);
-  flex: 1 1 370px;
+  flex: 1 1 370px;  
 
-  height: 245px;
+  max-width: 501px;
+  max-height: 245px;
   margin: 0.5em;
-  padding: 2em 0 2em 2em;
+  margin-right: 0;
+  padding: 30px;
 
   background-color: #FFFFFF;
 
   &__title {
     @include main-section-title;
+    margin-bottom: 20px;
+    text-align: left;
   }
 
+  &__checkboxes {
+    position: relative;
 
-  .tasks-wrapper {
-    @include flexible (space-around, flex-start, row, nowrap);
-    height: 213px;
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    min-width: 100%;
+
     overflow-y: scroll;
   }
 
   /* сustomize the label */
-  .container {
-    display: flex;
-    width: 100%;
+  &__container {
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 25px;
-    cursor: pointer;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 10px 0 10px 35px;
     font-size: 12px;
+
     user-select: none;
     background-color: #FFFFFF;
+    border-top: 2px solid #EDEDED;
+    cursor: pointer;
   }
 
-  .container .task {
+  &__container .task {
     @include text-gradient(to right);
     font-weight: 700;
   }
 
-  .container .descr {
+  &__container .descr {
     display: block;
-    margin-left: 30px;
-    margin-right: 5px;
     color: #BFBFBF;
     white-space: nowrap;
   }
 
   /* browser's default checkbox style reset */
-  .container input {
+  &__container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -378,7 +404,6 @@
   /* checkbox layout */
   .checkmark {
     position: absolute;
-    top: 0;
     left: 0;
     height: 17px;
     width: 17px;
@@ -386,12 +411,12 @@
   }
 
   /* when the checkbox is checked, adds a $pc background */
-  .container input:checked~.checkmark {
+  &__container input:checked~.checkmark {
     background-color: $primary-color;
     transition: all 0.2s ease-in-out;
   }
 
-  .container input:not(:checked)~.checkmark {
+  &__container input:not(:checked)~.checkmark {
     background-color: #BFBFBF;
     opacity: 1;
     transition: all 0.2s ease-in-out;
@@ -406,19 +431,19 @@
   }
 
   /* show the checkmark when checked */
-  .container input:checked~.checkmark:after {
+  &__container input:checked~.checkmark:after {
     display: block;
     transform: scale(1);
     transition: all 0.2s ease-in-out;
   }
 
-  .container input:not(:checked)~.checkmark:after {
+  &__container input:not(:checked)~.checkmark:after {
     transform: scale(0);
     transition: all 0.2s ease-in-out;
   }
 
   /* checkmark indicator */
-  .container .checkmark:after {
+  &__container .checkmark:after {
     left: 2px;
     top: 3px;
     width: 13px;
@@ -427,66 +452,41 @@
     clip-path: polygon(21% 40%, 21% 40%, 8% 54%, 25% 68%, 36% 77%, 47% 65%, 48% 64%, 64% 47%, 75% 35%, 93% 13%, 81% 4%, 36% 54%);
   }
 
-  &__clock-icon {
-    position: relative;
-    display: block;
-    height: 12px;
-    width: 12px;
-    margin-right: 9px;
-    background: url(../img/main/clock.png) center/cover no-repeat;
-  }
-
-  &__clock-icon::after {
-    content: "12:30";
-    position: absolute;
-    top: 4px;
-    left: 15px;
-    display: block;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 3px;
-    color: #BFBFBF;
-  }
-
-  &__time-container {
-    width: 100px;
-  }
-
-  &__clock-icon::before {
-    @extend .todays-task__clock-icon::after;
-    content: "AM";
-    top: 4px;
-    left: 53px;
-  }
-
   &__time {
-    padding-right: 1em;
+    position: relative;
+
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 3px;
     color: #BFBFBF;
   }
 
-  &__clock-icon:not(:nth-child(1)) {
-    margin-top: 26px;
+  &__time::before {
+    content: "";
+    position: relative;
+
+    width: 13px;
+    height: 13px;
+    margin-right: 9px;
+    background: black url(../img/main/clock.png) no-repeat center;
   }
 }
 
-// **********************************************************
-
-.shipments-progress-container {
-  @include flexible (space-between, center, row, nowrap);
-  flex: 1 1 auto;
-  margin: 0.5em;
+.box__bottom {
+  display: flex;
 }
 
 // Progress **************************************************
 
 .scale {
-  @include flexible(space-between, none, column, nowrap);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   flex: 0 3 auto;
-  max-width: 705px;
-  margin-right: 0.5em;
+  width: 241px;
+  height: 245px;
+  margin: .5em;
   padding: 30px;
   background-color: #FFFFFF;
 
@@ -498,13 +498,12 @@
 
   &__graph {
     width: 100%;
+    height: 88px;
     max-width: 575px;
-    // margin-bottom: 1em;
   }
 
   &__spread {
     @extend .revenue__spread;
-    margin-bottom: 0.3em;
   }
 
   &__amount {
@@ -525,13 +524,15 @@
 // Shipments **************************************************
 
 .shipments {
-  // @extend .progress;
-  flex: 1 1 auto;
+  @extend .scale;
+  flex: 0 3 auto;
+  width: 241px;
   margin-left: 0.5em;
+  margin-right: 0;
   padding: 1.6em 1.3em;
 
   &__title {
-    @extend .progress__title;
+    @extend .scale__title;
   }
 
   &__map {
@@ -540,22 +541,31 @@
 
   &__spread {
     @include flexible(space-between, flex-end, row, nowrap);
+    @extend .revenue__spread;
     width: 100%;
-    margin-bottom: 0.6em;
   }
 
   &__amount {
+    @include text-gradient-secondary(to right);
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__buy-value {
+    @extend .revenue__buy-value;
+  }
+
+  &__sell-value {
+    @extend .revenue__sell-value;
+  }
+
+
+
+  &__amount {
     @include text-gradient(to right);
-    // @extend .progress__amount;
+    @extend .scale__amount;
     display: inline-block;
     margin: 0 auto;
   }
 
-  // &__buy-value {
-  //   // @extend .progress__buy-value;
-  // }
-
-  // &__sell-value {
-  //   // @extend .progress__sell-value;
-  // }
 }
