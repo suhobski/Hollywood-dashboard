@@ -468,6 +468,7 @@ li {
 }
 
 .actors-list {
+  max-height: 516px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
