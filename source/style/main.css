@@ -697,9 +697,6 @@ li {
 
 @media (max-width: 768px) {
   .featured-companies__list > li {
-    width: 20px;
-    height: 20px;
-    background-size: contain;
     margin-bottom: 0;
   }
 }

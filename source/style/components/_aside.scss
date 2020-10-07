@@ -194,7 +194,7 @@
     font-size: 14px;
 
     @include sm {
-      margin-bottom: 15px; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      margin-bottom: 15px;
     }
   }
 
@@ -211,10 +211,6 @@
 
   &__list > li {
     @include sm {
-      width: 20px;
-      height: 20px;
-      background-size: contain;
-
       margin-bottom: 0;
     }
 
