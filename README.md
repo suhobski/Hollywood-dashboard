@@ -1,3 +1,3 @@
 # Hollywood
-https://suhobski.github.io/Hollywood/
+https://suhobski.github.io/Hollywood-Dashboard/
  
