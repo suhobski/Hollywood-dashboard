@@ -5,6 +5,13 @@ $second-color: #EC6E54;
 $blue: #708AE6;
 $purple: #8841AF;
 
+@font-face {
+  font-family: 'Deftone Stylus';
+  src: url(../fonts/deftone-stylus.ttf);
+  font-weight: regular;
+  font-style: normal;
+}
+
 // Fonts
 $maxWidth: 1370; //for adaptive font-size
 

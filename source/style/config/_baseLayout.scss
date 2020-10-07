@@ -3,16 +3,14 @@
   flex-direction: column;
 
   max-width: 1366px;
-  height: 1000px;
   margin: 0 auto;
 
   font-family: 'Lato', Arial, Helvetica, sans-serif;
-  background-color: bisque;
 }
 
 .nav {
   width: 70px;
-  height: 100vh;
+  min-height: 100vh;
   
 }
 
@@ -24,11 +22,8 @@
     padding-top: 40px;
     margin-left: 0;
   }
-
   max-width: 1296px;
 
   margin-left: 70px;
-
-  background-color: #EBEBEB;
 }
 

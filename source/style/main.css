@@ -362,6 +362,13 @@ li {
   outline-offset: 0;
 }
 
+@font-face {
+  font-family: 'Deftone Stylus';
+  src: url(../fonts/deftone-stylus.ttf);
+  font-weight: regular;
+  font-style: normal;
+}
+
 .page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -371,21 +378,18 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 1366px;
-  height: 1000px;
   margin: 0 auto;
   font-family: 'Lato', Arial, Helvetica, sans-serif;
-  background-color: bisque;
 }
 
 .nav {
   width: 70px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container {
   max-width: 1296px;
   margin-left: 70px;
-  background-color: #EBEBEB;
 }
 
 @media (max-width: 768px) {
@@ -730,6 +734,10 @@ li {
   background: url(../img/aside/featured-companys/vk.png);
 }
 
+.header {
+  width: 100%;
+}
+
 .header .options {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -745,7 +753,6 @@ li {
           flex: 0 0 59px;
   height: 70px;
   border-left: 2px solid #F1F1F1;
-  background-color: #fff;
 }
 
 @media (max-width: 576px) {
@@ -2108,12 +2115,5 @@ li {
 .nav .menu__item:hover {
   color: #FD5670;
   background-color: #FFFFFF;
-}
-
-@font-face {
-  font-family: 'Deftone Stylus';
-  src: url(../fonts/deftone-stylus.ttf);
-  font-weight: regular;
-  font-style: normal;
 }
 /*# sourceMappingURL=main.css.map */
