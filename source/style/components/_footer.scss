@@ -1,0 +1,50 @@
+.footer {
+  padding: 30px 40px 15px;
+
+  background: #FFFFFF;
+
+  @include sm {
+    padding-top: 15px;
+  }
+
+  &__title {
+    @include main-section-title;
+    font-size: 14px;
+
+    @include sm {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+
+    @include sm {
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    @include sm {
+      margin-bottom: 0;
+      width: 40px;
+      height: 40px;
+    }
+
+    width: 55px;
+    height: 55px;
+    margin-bottom: 15px;
+
+    cursor: pointer;
+  }
+
+  &__link:not(:last-child) {
+    @include sm {
+      margin-right: 10px;
+    }
+  }
+
+}
