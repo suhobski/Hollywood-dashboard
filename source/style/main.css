@@ -646,7 +646,7 @@ li {
 
 @media (max-width: 768px) {
   .footer {
-    padding-top: 15px;
+    padding: 15px;
   }
 }
 
@@ -682,13 +682,14 @@ li {
 
 @media (max-width: 768px) {
   .footer__list {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
 }
 
-.footer__link {
+.footer__image {
   width: 55px;
   height: 55px;
   margin-bottom: 15px;
@@ -696,7 +697,7 @@ li {
 }
 
 @media (max-width: 768px) {
-  .footer__link {
+  .footer__image {
     margin-bottom: 0;
     width: 40px;
     height: 40px;
