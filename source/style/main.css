@@ -569,9 +569,9 @@ li {
 
 @media (max-width: 768px) {
   .search {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -583,6 +583,10 @@ li {
   color: #000000;
   border: none;
   border-bottom: 2px solid #F1F1F1;
+}
+
+.search__input:hover {
+  border-color: #FD5670;
 }
 
 .search__input::-webkit-input-placeholder {
