@@ -472,15 +472,16 @@ li {
 }
 
 .actors-list {
-  max-height: 516px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow-y: scroll;
   padding: 5px 20px 5px 0;
   background-color: #fff;
@@ -488,7 +489,7 @@ li {
 
 @media (max-width: 768px) {
   .actors-list {
-    max-height: 168px;
+    max-height: 336px;
   }
 }
 
@@ -505,7 +506,7 @@ li {
   min-width: 170px;
   -ms-flex-preferred-size: 244px;
       flex-basis: 244px;
-  height: 83px;
+  min-height: 83px;
   margin-left: 20px;
   border-bottom: 2px solid #F1F1F1;
 }
