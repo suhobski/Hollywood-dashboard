@@ -682,10 +682,16 @@ li {
 
 @media (max-width: 768px) {
   .footer__list {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
+    width: 290px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__link:not(:last-child) {
+    margin-right: 10px;
   }
 }
 
@@ -701,12 +707,6 @@ li {
     margin-bottom: 0;
     width: 40px;
     height: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer__link:not(:last-child) {
-    margin-right: 10px;
   }
 }
 

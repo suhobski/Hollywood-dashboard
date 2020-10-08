@@ -22,8 +22,16 @@
     flex-wrap: wrap;
 
     @include sm {
-      justify-content: space-around;
+      // justify-content: center;
       flex-wrap: nowrap;
+      width: 290px;
+      margin: 0 auto;
+    }
+  }
+
+  &__link:not(:last-child) {
+    @include sm {
+      margin-right: 10px;
     }
   }
 
@@ -39,12 +47,6 @@
     margin-bottom: 15px;
 
     cursor: pointer;
-  }
-
-  &__link:not(:last-child) {
-    @include sm {
-      margin-right: 10px;
-    }
   }
 
 }
