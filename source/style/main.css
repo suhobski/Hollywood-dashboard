@@ -1006,7 +1006,6 @@ li {
   border-top: 2px solid #F1F1F1;
   background-color: #fff;
   overflow-x: scroll;
-  z-index: 0;
 }
 
 @media (max-width: 992px) {
@@ -1152,6 +1151,12 @@ li {
   }
 }
 
+@media (max-width: 576px) {
+  .main__second-line {
+    padding-right: 0.5em;
+  }
+}
+
 .content {
   -webkit-box-flex: 1;
       -ms-flex: auto;
@@ -1160,18 +1165,19 @@ li {
   background: #EDEDED;
 }
 
+@media (max-width: 768px) {
+  .content {
+    padding: 0;
+  }
+}
+
 .progress {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
-  max-width: 1000px;
+  width: 100%;
   min-height: 266px;
   padding: 30px;
   margin: 0.5em;
@@ -1297,9 +1303,7 @@ li {
 
 .progress__wrap-inner {
   padding-top: 10px;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
+  min-width: 592px;
 }
 
 .progress__picture {

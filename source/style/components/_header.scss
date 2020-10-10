@@ -242,9 +242,8 @@
     padding-left: 45px;
 
     border-top: 2px solid #F1F1F1;
-    background-color: #fff; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    background-color: #fff;
     overflow-x: scroll;
-    z-index: 0;
 
     @include md {
       padding-left: 20px;
