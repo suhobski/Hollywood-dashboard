@@ -2033,11 +2033,9 @@ li {
 }
 
 .nav__burger {
+  display: none;
   width: 30px;
   height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2046,6 +2044,14 @@ li {
           justify-content: center;
   margin-right: 15px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav__burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .nav__burger > span {
@@ -2072,8 +2078,6 @@ li {
   width: 20px;
   height: 2px;
   background: #FFFFFF;
-  -webkit-transition-duration: .25s;
-          transition-duration: .25s;
 }
 
 .nav__burger > span::before {

@@ -120,10 +120,14 @@
   }
 
   &__burger {
+    @include sm {
+      display: flex;
+    }
+
+    display: none;
     width: 30px;
     height: 40px;
 
-    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -136,7 +140,6 @@
     @include sm {
       display: block;
     }
-
     position: relative;
 
     display: none;
@@ -158,8 +161,6 @@
     height: 2px;
 
     background: #FFFFFF;
-
-    transition-duration: .25s;
   }
 
   &__burger > span::before {
@@ -167,8 +168,7 @@
   }
 
   &__burger > span::after {
-      top: 5px;
+    top: 5px;
   }
-
 
 }
