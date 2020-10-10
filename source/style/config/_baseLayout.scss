@@ -8,12 +8,6 @@
   font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
-.nav {
-  width: 70px;
-  min-height: 100vh;
-  
-}
-
 .container {
   @include sm {
     display: flex;
