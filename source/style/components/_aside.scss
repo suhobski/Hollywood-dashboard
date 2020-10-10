@@ -119,7 +119,7 @@
 }
 
 // Search
-.search {
+.aside-search {
   flex: 0 0 45px;
   display: flex;
   justify-content: space-between;
@@ -145,6 +145,8 @@
 
     border: none;
     border-bottom: 2px solid #F1F1F1;
+
+    transition: .3s;
   }
 
   &__input:hover {
@@ -170,6 +172,12 @@
     border: none;
     background: url(../img/aside/search/search.png) no-repeat center;
     cursor: pointer;
+
+    transition: .3s;
+  }
+
+  &__submit:hover {
+transform: rotate(-45deg);
   }
 
   &__edit {
@@ -182,5 +190,11 @@
     border: none;
     background: url(../img/aside/search/edit.png) no-repeat center;
     cursor: pointer;
+
+    transition: .3s;
+  }
+
+  &__edit:hover {
+    transform: rotate(-45deg);
   }
 }
