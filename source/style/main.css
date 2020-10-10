@@ -1895,14 +1895,21 @@ li {
   .nav {
     background: -webkit-gradient(linear, left top, right top, from(#FD5670), to(#EC6E54));
     background: linear-gradient(to right, #FD5670, #EC6E54);
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: start;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     min-height: 40px;
     width: 100vw;
   }
@@ -1926,7 +1933,7 @@ li {
 
 @media (max-width: 768px) {
   .nav__home {
-    width: 55px;
+    width: 40px;
     height: 40px;
     margin-bottom: 0;
     background: transparent;
@@ -1948,6 +1955,7 @@ li {
 
 @media (max-width: 768px) {
   .nav__logo {
+    color: #FFFFFF;
     -webkit-text-fill-color: white;
   }
 }
@@ -2022,6 +2030,58 @@ li {
   .nav__exit {
     display: none;
   }
+}
+
+.nav__burger {
+  width: 30px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.nav__burger > span {
+  position: relative;
+  display: none;
+  width: 20px;
+  height: 2px;
+  background: #FFFFFF;
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+}
+
+@media (max-width: 768px) {
+  .nav__burger > span {
+    display: block;
+  }
+}
+
+.nav__burger > span::before,
+.nav__burger > span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #FFFFFF;
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+}
+
+.nav__burger > span::before {
+  top: -5px;
+}
+
+.nav__burger > span::after {
+  top: 5px;
 }
 
 @media screen and (max-height: 580px) {

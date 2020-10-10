@@ -1,11 +1,10 @@
 .nav {
   @include background-gradient(to top);
+  
   @include sm {
     @include background-gradient(to right);
     
-    display: block;
-    flex-direction: row;
-    align-items: start;
+    @include flexible(space-between, center, row, nowrap);
     
     min-height: 40px;
     width: 100vw;
@@ -21,6 +20,14 @@
   min-height: 100vh;
 
   &__home {
+    @include sm {      
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0;
+
+      background: transparent;
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,14 +37,6 @@
     margin-bottom: 30px;
     
     background: #FFFFFF;
-
-    @include sm {      
-      width: 55px;
-      height: 40px;
-      margin-bottom: 0;
-
-      background: transparent;
-    }
   }
 
   &__logo {
@@ -51,6 +50,7 @@
     color: $primary-color;
 
     @include sm {
+      color: #FFFFFF;
       -webkit-text-fill-color: white;
     }
   }
@@ -63,7 +63,7 @@
     position: relative;
     flex: auto;
   }
-  
+
   &__link {
     position: relative;
     display: block;
@@ -118,5 +118,57 @@
 
     background: url(../img/nav/power.png);
   }
+
+  &__burger {
+    width: 30px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 15px;
+
+    cursor: pointer;
+  }
+
+  &__burger > span {
+    @include sm {
+      display: block;
+    }
+
+    position: relative;
+
+    display: none;
+    width: 20px;
+    height: 2px;
+
+    background: #FFFFFF;
+
+    transition-duration: .25s;
+  }
+
+  &__burger > span::before,
+  &__burger > span::after {
+    content: "";
+    position: absolute;
+
+    display: block;
+    width: 20px;
+    height: 2px;
+
+    background: #FFFFFF;
+
+    transition-duration: .25s;
+  }
+
+  &__burger > span::before {
+    top: -5px;
+  }
+
+  &__burger > span::after {
+      top: 5px;
+  }
+
 
 }
