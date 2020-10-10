@@ -54,7 +54,7 @@
       -webkit-text-fill-color: white;
     }
   }
-
+  // Wrap for main links of navigation***********************
   &__main {
     @include sm {
       display: none;
@@ -119,6 +119,7 @@
     background: url(../img/nav/power.png);
   }
 
+  // Burger menu icon *******************************
   &__burger {
     @include sm {
       display: flex;

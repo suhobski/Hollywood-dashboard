@@ -1,21 +1,14 @@
 .header{
   width: 100%;
 
-  
 
   .options {
     display: flex;
     
-    &__item {
-      display: flex;
-      flex: 0 0 59px;
-      height: 70px;
-
-      border-left: 2px solid #F1F1F1;
-
+    .options__button {
       @include xs {
         flex-shrink: 1;
-        flex-basis: 40px;
+        width: 40px;
         height: 40px;
       }
 
@@ -23,81 +16,91 @@
         flex-grow: 1;
       }
 
-      .options__button {
-        width: 100%;
+      width: 59px;
+      height: 70px;
 
-        background: url(../../img/) transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-      }
-      
-      .options__button--more {
-        background: url(../img/header/more.png) no-repeat center;
-      }
+      background: url(../../img/) transparent;
+      border: none;
+      border-left: 2px solid #F1F1F1;
 
-      .options__button--folder {
-        background: url(../img/header/folder.png) no-repeat center;
-      }
-
-      .options__button--settings {
-        background: url(../img/header/settings.png) no-repeat center;
-      }
-
-      .options__button--search {
-        @include md {
-          display: block;
-        }
-
-        display: none;
-        background: url(../img/header/search-gradient.png) no-repeat center;
-      }
-
-      .options__button--upload {
-        background: url(../img/header/upload.png) no-repeat center;
-      }
-
-      .options__button--envelope {
-        background: url(../img/header/envelope.png) no-repeat center;
-      }
-
-      .options__button--planet-earth {
-        position: relative;
-        background: url(../img/header/planet-earth.png) no-repeat center;
-        z-index: 0;
-      }
-
-      .options__button--planet-earth::before {
-        @include background-gradient(to right);
-        @include xs {
-          top: 10%;
-          right: 10%;
-        }
-
-        content: "";
-        position: absolute;
-        top: 26%;
-        right: 26%;
-
-        width: 6px;
-        height: 6px;
-
-        border-radius: 50%;
-      }
-    }
-    &__item--search {
-      justify-content: center;
-      flex-grow: 1;
+      outline: none;
+      cursor: pointer;
     }
 
-    &__item:first-child {
-      box-shadow: inset 63px 40px 20px -70px rgba(0,0,0,0.32);
-    }
+    // &__button:first-child {
+    //   box-shadow: inset 63px 40px 20px -70px rgba(0,0,0,0.32);
+    // }
 
-    &__item:first-child,
-    &__item:last-child {
+    &__button:first-child,
+    &__button:last-child {
       border-left: none;
     }
+    
+    .options__button--more {
+      background: url(../img/header/more.png) no-repeat center;
+    }
+
+    .options__button--folder {
+      background: url(../img/header/folder.png) no-repeat center;
+    }
+
+    .options__button--settings {
+      background: url(../img/header/settings.png) no-repeat center;
+    }
+
+    .options__button--search {
+      @include md {
+        display: block;
+      }
+
+      display: none;
+      background: url(../img/header/search-gradient.png) no-repeat center;
+    }
+
+    .options__button--upload {
+      background: url(../img/header/upload.png) no-repeat center;
+    }
+
+    .options__button--envelope {
+      background: url(../img/header/envelope.png) no-repeat center;
+    }
+
+    .options__button--planet-earth {
+      position: relative;
+      background: url(../img/header/planet-earth.png) no-repeat center;
+      z-index: 0;
+    }
+
+    .options__button--planet-earth::before {
+      @include background-gradient(to right);
+      @include xs {
+        top: 10%;
+        right: 10%;
+      }
+
+      content: "";
+      position: absolute;
+      top: 26%;
+      right: 26%;
+
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+    }
+    
+    &__item--search {
+      @include md {
+        display: none;
+      }
+
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+
+      border-left: 2px solid #F1F1F1;
+    }
+  }
 
     // Search ****************************************
     .search {
@@ -232,7 +235,7 @@
         border-radius: 50%;
         background: #BFBFBF;
       }
-    }
+    
   }
 
   // Stactics ************************************
