@@ -243,6 +243,10 @@
 
   // Stactics ************************************
   .stactics {
+    @include md {
+      padding-left: 20px;
+    }
+
     display: flex;
     align-items: center;
     padding-left: 45px;
@@ -250,10 +254,6 @@
     border-top: 2px solid #F1F1F1;
     background-color: #fff;
     overflow-x: scroll;
-
-    @include md {
-      padding-left: 20px;
-    }
 
     &__list {
       flex: 1 1 auto;
@@ -284,6 +284,8 @@
     font-weight: bold;
 
     list-style-type: none;
+
+    transition: .3s;
 
     &__title {
       margin-bottom: 7px;
@@ -343,6 +345,10 @@
     }
   }
   
+  .card:hover {
+    transform: scale(1.1);
+  }
+
   .card:last-child {
     margin-right: 0;
   }

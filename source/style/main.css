@@ -1063,6 +1063,8 @@ li {
   margin-right: 20px;
   font-weight: bold;
   list-style-type: none;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .header .card__title {
@@ -1114,6 +1116,11 @@ li {
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
   border-top: 6px solid #FD5670;
+}
+
+.header .card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .header .card:last-child {
