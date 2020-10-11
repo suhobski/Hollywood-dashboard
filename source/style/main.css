@@ -1641,6 +1641,7 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
   padding: 10px 0 10px 35px;
   font-size: 12px;
   -webkit-user-select: none;
@@ -1665,13 +1666,11 @@ li {
 }
 
 .todays-task__container .descr {
-  display: block;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  display: inline-block;
   color: #BFBFBF;
   text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
 }
 
