@@ -1179,6 +1179,7 @@ li {
 }
 
 .content {
+  background-color: red;
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
@@ -1193,17 +1194,18 @@ li {
 }
 
 .progress {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
   min-height: 266px;
   padding: 30px;
   margin: 0.5em;
-  overflow-x: scroll;
   background: #FFFFFF;
+  overflow-x: auto;
 }
 
 .progress__head {
@@ -1324,7 +1326,6 @@ li {
 
 .progress__wrap-inner {
   padding-top: 10px;
-  min-width: 592px;
 }
 
 .progress__picture {
@@ -1353,7 +1354,7 @@ li {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 265px;
           flex: 1 0 265px;
-  max-width: 265px;
+  min-width: 265px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

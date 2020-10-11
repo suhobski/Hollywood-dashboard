@@ -27,6 +27,8 @@
 }
 
 .content {
+  background-color: red;
+
   @include sm {
     padding: 0;
   }
@@ -40,16 +42,16 @@
 // Monthly Progress **************************************************
 
 .progress {
-  display: none;
+  display: flex;
   flex-direction: column;
 
-  width: 100%;
   min-height: 266px;
   padding: 30px;
   margin: 0.5em;
 
-  overflow-x: scroll;
   background: #FFFFFF;
+
+  overflow-x: auto;
 
 
   &__head {
@@ -151,7 +153,6 @@
 
   &__wrap-inner {
     padding-top: 10px;
-    min-width: 592px;
   }
 
   &__picture {
@@ -177,7 +178,7 @@
     max-width: 1000px;
   }
   flex: 1 0 265px;
-  max-width: 265px;
+  min-width: 265px;
 
   display: flex;
   flex-direction: column;
