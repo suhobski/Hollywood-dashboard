@@ -32,6 +32,10 @@
     &__button:last-child {
       border-left: none;
     }
+
+    &__button:first-child {
+      box-shadow: inset 63px 40px 20px -70px rgba(0,0,0,0.32);
+    }
     
     .options__button--more {
       background: url(../img/header/more.png) no-repeat center;
