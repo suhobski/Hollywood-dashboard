@@ -5,7 +5,7 @@
   .options {
     display: flex;
     
-    .options__button {
+    &__button {
       @include xs {
         flex-shrink: 1;
         width: 40px;
@@ -19,17 +19,14 @@
       width: 59px;
       height: 70px;
 
-      background: url(../../img/) transparent;
       border: none;
       border-left: 2px solid #F1F1F1;
 
       outline: none;
       cursor: pointer;
-    }
 
-    // &__button:first-child {
-    //   box-shadow: inset 63px 40px 20px -70px rgba(0,0,0,0.32);
-    // }
+      transition: .3s;
+    }
 
     &__button:first-child,
     &__button:last-child {
@@ -88,18 +85,11 @@
 
       border-radius: 50%;
     }
-    
-    &__item--search {
-      @include md {
-        display: none;
-      }
 
-      display: flex;
-      justify-content: center;
-      flex-grow: 1;
-
-      border-left: 2px solid #F1F1F1;
+    &__button:hover {
+      transform: scale(1.2);
     }
+    
   }
 
     // Search ****************************************
@@ -109,9 +99,15 @@
       }
       
       position: relative;
+
       display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
 
       max-width: 673px;
+
+      border-left: 2px solid #F1F1F1;
     }
 
     .search__input {
@@ -132,9 +128,8 @@
     }
 
     .search__submit {
-      position: absolute;
-      top: 25px;
-      right: 25px;
+      position: relative;
+      right: 30px;
 
       flex: 0 0 16px;
       width: 20px;
