@@ -3,12 +3,16 @@
 
 
   .options {
+    @include xs {
+      flex-wrap: wrap;
+    }
+
     display: flex;
     
     &__button {
       @include xs {
         flex-shrink: 1;
-        width: 40px;
+        width: 25%;
         height: 40px;
       }
 

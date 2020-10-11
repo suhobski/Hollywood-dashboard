@@ -736,6 +736,13 @@ li {
   display: flex;
 }
 
+@media (max-width: 576px) {
+  .header .options {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .header .options__button {
   width: 59px;
   height: 70px;
@@ -751,7 +758,7 @@ li {
   .header .options__button {
     -ms-flex-negative: 1;
         flex-shrink: 1;
-    width: 40px;
+    width: 25%;
     height: 40px;
   }
 }
