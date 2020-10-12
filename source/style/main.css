@@ -1554,9 +1554,6 @@ li {
 }
 
 .box {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 300px;
-          flex: 1 1 300px;
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1592,7 +1589,6 @@ li {
       flex-wrap: nowrap;
   position: relative;
   display: flex;
-  width: 100%;
   max-height: 245px;
   margin: 0.5em;
   margin-right: .5em;
