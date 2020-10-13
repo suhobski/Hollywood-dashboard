@@ -1,124 +1,123 @@
 .header{
   width: 100%;
+}
 
-
-  .options {
-    @include xs {
-      flex-wrap: wrap;
-    }
-
-    display: flex;
-    
-    &__button {
-      @include xs {
-        flex-shrink: 1;
-        width: 25%;
-        height: 40px;
-      }
-
-      @include md {
-        flex-grow: 1;
-      }
-
-      width: 59px;
-      height: 70px;
-
-      border: none;
-      border-left: 2px solid #F1F1F1;
-
-      outline: none;
-      cursor: pointer;
-
-      transition: .3s;
-    }
-
-    &__button:first-child,
-    &__button:last-child {
-      border-left: none;
-    }
-
-    &__button:first-child {
-      box-shadow: inset 63px 40px 20px -70px rgba(0,0,0,0.32);
-    }
-    
-    .options__button--more {
-      background: url(../img/header/more.png) no-repeat center;
-    }
-
-    .options__button--folder {
-      background: url(../img/header/folder.png) no-repeat center;
-    }
-
-    .options__button--settings {
-      background: url(../img/header/settings.png) no-repeat center;
-    }
-
-    .options__button--search {
-      @include md {
-        display: block;
-      }
-
-      display: none;
-      background: url(../img/header/search-gradient.png) no-repeat center;
-    }
-
-    .options__button--upload {
-      background: url(../img/header/upload.png) no-repeat center;
-    }
-
-    .options__button--envelope {
-      background: url(../img/header/envelope.png) no-repeat center;
-    }
-
-    .options__button--planet-earth {
-      position: relative;
-      background: url(../img/header/planet-earth.png) no-repeat center;
-      z-index: 0;
-    }
-
-    .options__button--planet-earth::before {
-      @include background-gradient(to right);
-      @include xs {
-        top: 10%;
-        right: 10%;
-      }
-
-      content: "";
-      position: absolute;
-      top: 26%;
-      right: 26%;
-
-      width: 6px;
-      height: 6px;
-
-      border-radius: 50%;
-    }
-
-    &__button:hover {
-      transform: scale(1.2);
-    }
-    
+.options {
+  @include xs {
+    flex-wrap: wrap;
   }
 
-    // Search ****************************************
-    .search {
-      @include md {
-        display: none;
-      }
-      
-      position: relative;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-grow: 1;
-
-      max-width: 673px;
-
-      border-left: 2px solid #F1F1F1;
+  display: flex;
+  
+  &__button {
+    @include xs {
+      flex-shrink: 1;
+      width: 25%;
+      height: 40px;
     }
 
-    .search__input {
+    @include md {
+      flex-grow: 1;
+    }
+
+    width: 59px;
+    height: 70px;
+
+    border: none;
+    border-left: 2px solid #F1F1F1;
+
+    outline: none;
+    cursor: pointer;
+
+    transition: .3s;
+  }
+
+  &__button:first-child,
+  &__button:last-child {
+    border-left: none;
+  }
+
+  &__button:first-child {
+    box-shadow: inset 63px 40px 20px -70px rgba(0,0,0,0.32);
+  }
+  
+  .options__button--more {
+    background: url(../img/header/more.png) no-repeat center;
+  }
+
+  .options__button--folder {
+    background: url(../img/header/folder.png) no-repeat center;
+  }
+
+  .options__button--settings {
+    background: url(../img/header/settings.png) no-repeat center;
+  }
+
+  .options__button--search {
+    @include md {
+      display: block;
+    }
+
+    display: none;
+
+    background: url(../img/header/search-gradient.png) no-repeat center;
+  }
+
+  .options__button--upload {
+    background: url(../img/header/upload.png) no-repeat center;
+  }
+
+  .options__button--envelope {
+    background: url(../img/header/envelope.png) no-repeat center;
+  }
+
+  .options__button--planet-earth {
+    position: relative;
+    z-index: 0;
+
+    background: url(../img/header/planet-earth.png) no-repeat center;
+  }
+
+  .options__button--planet-earth::before {
+    @include background-gradient(to right);
+    @include xs {
+      top: 10%;
+      right: 10%;
+    }
+
+    content: "";
+    position: absolute;
+    top: 26%;
+    right: 26%;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+  }
+
+  &__button:hover {
+    transform: scale(1.2);
+  }
+
+  // Search ****************************************
+  .search {
+    @include md {
+      display: none;
+    }
+    
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    max-width: 673px;
+
+    border-left: 2px solid #F1F1F1;
+  
+    &__input {
       min-width: 300px;
       height: 34px;
       padding: 12px;
@@ -130,12 +129,12 @@
       outline: none;
     }
 
-    .search__input::placeholder {
+    &__input::placeholder {
       font-size: 12px;
       color: #C8C8C8;
     }
 
-    .search__submit {
+    &__submit {
       position: relative;
       right: 30px;
 
@@ -148,208 +147,210 @@
       border: none;
       outline: none;
     }
-
-
-    //person ****************************************
-    .person {
-
-      display: flex;
-      align-items: center;
-      flex: 0 0 244px;
-
-      @include sm {
-        flex-basis: 40px;
-      }
-
-      &__photo {
-        @include xs {
-          width: 40px;
-        }
-      }
-      
-      &__about {
-        @include sm {
-          display: none;
-        }
-
-        flex-grow: 1;
-        margin-left: 18px;
-
-        line-height: 10px;
-      }
-      
-      &__name {
-        @include text-gradient(to right);
-
-        display: block;
-        padding-bottom: 9px;
-
-        font-size: 13px;
-        font-weight: 700;
-      }
-
-      &__position{
-        font-size: 10px;
-        color: #BFBFBF;
-        line-height: 13px;
-      }
-
-      &__more-information {
-        @include sm {
-          display: none;;
-        }
-        position: relative;
-
-        width: 5px;
-        height: 21px;
-        padding-top: 8px;
-        margin: 0 18px;
-      }
-
-      &__more-information > span {
-        display: block;
-        width: 5px;
-        height: 5px;
-
-        background: #BFBFBF;
-        border-radius: 50%;
-      }
-
-      &__more-information > span::before {
-        position: absolute;
-        top: 0;
-
-        content: "";
-        width: 5px;
-        height: 5px;
-
-        border-radius: 50%;
-        background: #BFBFBF;
-      }
-
-      &__more-information > span::after {
-        position: absolute;
-        bottom: 0;
-
-        content: "";
-        width: 5px;
-        height: 5px;
-
-        border-radius: 50%;
-        background: #BFBFBF;
-      }
-    
   }
 
-  // Stactics ************************************
-  .stactics {
-    @include md {
-      padding-left: 20px;
-    }
-
+  //person ****************************************
+  .person {
     display: flex;
     align-items: center;
-    padding-left: 45px;
+    flex: 0 0 244px;
 
-    border-top: 2px solid #F1F1F1;
-    background-color: #fff;
-    overflow-x: scroll;
-
-    &__list {
-      flex: 1 1 auto;
-      display: flex;
-      justify-content: space-between;
-      padding: 17px 0;
+    @include sm {
+      flex-basis: 40px;
     }
 
-    &__add-card {
+    &__photo {
+      @include xs {
+        width: 40px;
+      }
+    }
+    
+    &__about {
+      @include sm {
+        display: none;
+      }
+
+      flex-grow: 1;
+      margin-left: 18px;
+
+      line-height: 10px;
+    }
+    
+    &__name {
       @include text-gradient(to right);
-      flex: 0 0 160px;
 
-      height: 25px;
-       
-      font-size: 12px;
-      font-weight: bold;
+      display: block;
+      padding-bottom: 9px;
 
-      border: none;
-      outline: none;
-      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    &__position{
+      font-size: 10px;
+      color: #BFBFBF;
+      line-height: 13px;
+    }
+
+    &__more-information {
+      @include sm {
+        display: none;;
+      }
+      position: relative;
+
+      width: 5px;
+      height: 21px;
+      padding-top: 8px;
+      margin: 0 18px;
+    }
+
+    &__more-information > span {
+      display: block;
+      width: 5px;
+      height: 5px;
+
+      background: #BFBFBF;
+      border-radius: 50%;
+    }
+
+    &__more-information > span::before {
+      position: absolute;
+      top: 0;
+
+      content: "";
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+      background: #BFBFBF;
+    }
+
+    &__more-information > span::after {
+      position: absolute;
+      bottom: 0;
+
+      content: "";
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+      background: #BFBFBF;
     }
   }
+}
 
-  .card {
-    min-width: 90px;
-    margin-right: 20px;
+// Stactics ************************************
+.stactics {
+  @include md {
+    padding-left: 20px;
+  }
 
+  display: flex;
+  align-items: center;
+
+  padding-left: 45px;
+
+  border-top: 2px solid #F1F1F1;
+  background-color: #fff;
+  overflow-x: scroll;
+
+  &__list {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 17px 0;
+  }
+
+  &__add-card {
+    @include text-gradient(to right);
+    flex: 0 0 160px;
+
+    height: 25px;
+      
+    font-size: 12px;
     font-weight: bold;
 
-    list-style-type: none;
-
-    transition: .3s;
-
-    &__title {
-      margin-bottom: 7px;
-
-      font-size: 12px;
-      color: #777777;
-    }
-
-    &__amount {
-      @include text-gradient(to right);
-
-      font-size: 20px;
-    }
-
-    &__spread {
-      position: relative;
-
-      margin-top: 3px;
-    }
-
-    &__buy-value,
-    &__sell-value {
-      margin-bottom: 8px;
-
-      font-size: 12px;
-
-      color: #BFBFBF;
-    }
-
-    &__buy-value::before {
-      content: '';
-
-      position: relative;
-      bottom: 8px;
-      width: 0;
-      height: 0;
-      margin-right: 3px;
-
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      border-bottom: 6px solid #A889E9;
-    }
-
-    &__sell-value::before {
-      content: '';
-
-      position: relative;
-      top: 10px;
-      width: 0;
-      height: 0;
-      margin-right: 3px;
-      margin-left: 5px;
-
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      border-top: 6px solid $primary-color;
-    }
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
-  
-  .card:hover {
-    transform: scale(1.1);
+}
+
+.card {
+  min-width: 90px;
+  margin-right: 20px;
+
+  font-weight: bold;
+
+  list-style-type: none;
+
+  transition: .3s;
+
+  &__title {
+    margin-bottom: 7px;
+
+    font-size: 12px;
+    color: #777777;
   }
 
-  .card:last-child {
-    margin-right: 0;
+  &__amount {
+    @include text-gradient(to right);
+
+    font-size: 20px;
   }
+
+  &__spread {
+    position: relative;
+
+    margin-top: 3px;
+  }
+
+  &__buy-value,
+  &__sell-value {
+    margin-bottom: 8px;
+
+    font-size: 12px;
+
+    color: #BFBFBF;
+  }
+
+  &__buy-value::before {
+    content: '';
+
+    position: relative;
+    bottom: 8px;
+
+    width: 0;
+    height: 0;
+    margin-right: 3px;
+
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 6px solid #A889E9;
+  }
+
+  &__sell-value::before {
+    content: '';
+
+    position: relative;
+    top: 10px;
+    
+    width: 0;
+    height: 0;
+    margin-right: 3px;
+    margin-left: 5px;
+
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 6px solid $primary-color;
+  }
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card:last-child {
+  margin-right: 0;
 }
