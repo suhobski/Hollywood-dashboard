@@ -2025,10 +2025,13 @@ li {
   font-size: 10px;
   text-align: center;
   color: #FFFFFF;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .nav__link:hover, .nav__link:active {
-  background-color: #FD725D;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .nav__link:hover::after, .nav__link:active::after {
@@ -2071,12 +2074,19 @@ li {
   width: 20px;
   margin: 20px 0;
   background: url(../img/nav/power.png);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 @media (max-width: 768px) {
   .nav__exit {
     display: none;
   }
+}
+
+.nav__exit:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .nav__burger {
