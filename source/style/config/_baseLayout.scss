@@ -21,3 +21,42 @@
   margin-left: 70px;
 }
 
+.content {
+  display: flex;
+
+  @include sm {
+    flex-direction: column;
+  }
+
+}
+
+.main {
+  @include sm {
+    padding: 0;
+  }
+
+  flex: auto;
+  padding: 0.5em;
+
+  background: #EDEDED;
+
+  &__first-line {
+    display: flex;
+
+    @include md {
+      flex-direction: column;
+    }
+  }
+
+  &__second-line {
+    display: flex;
+    
+    @include md {
+      flex-direction: column;
+    }
+
+    @include xs {
+      padding-right: 0.5em;
+    }
+  }
+}

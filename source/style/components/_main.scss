@@ -1,46 +1,4 @@
-.main {
-  display: flex;
-
-  @include sm {
-    flex-direction: column;
-  }
-
-  &__first-line {
-    display: flex;
-
-    @include md {
-      flex-direction: column;
-    }
-  }
-
-  &__second-line {
-    display: flex;
-    
-    @include md {
-      flex-direction: column;
-    }
-
-    @include xs {
-      padding-right: 0.5em;
-    }
-  }
-}
-
-.content {
-  background-color: red;
-
-  @include sm {
-    padding: 0;
-  }
-
-  flex: auto;
-  padding: 0.5em;
-
-  background: #EDEDED;
-}
-
 // Monthly Progress **************************************************
-
 .progress {
   display: flex;
   flex-direction: column;
@@ -53,7 +11,6 @@
 
   overflow-x: auto;
 
-
   &__head {
     display: flex;
     align-items: center;
@@ -61,6 +18,7 @@
 
   &__title {
     @include main-section-title;
+
     flex: auto;
 
     text-align: left;
@@ -75,6 +33,7 @@
     border: none;
     outline: none;
     cursor: pointer;
+
     transition: .5s ease;
   }
 
@@ -83,21 +42,23 @@
     @include background-gradient(to right);
 
     padding: 8px 17px;
+
     color: #FFFFFF;
+
     border-radius: 17px;
   }
 
   &__more-information {
+    @include sm {
+      margin: 0 10px;
+    }
+
     position: relative;
 
     width: 5px;
     height: 21px;
     padding-top: 8px;
     margin-left: 18px;
-
-    @include sm {
-      margin: 0 10px;
-    }
   }
 
   &__more-information > span {
@@ -110,10 +71,11 @@
   }
 
   &__more-information>span::before {
+    content: "";
+
     position: absolute;
     top: 0;
 
-    content: "";
     width: 5px;
     height: 5px;
 
@@ -136,6 +98,7 @@
   &__graph {
     display: flex;
     flex: auto;
+
     min-width: 100%;
     height: auto;
   }
@@ -157,8 +120,9 @@
 
   &__picture {
     width: 100%;
-    object-fit: cover;
     margin-bottom: 25px;
+
+    object-fit: fill;
   }
 
   &__period-wrap {
@@ -202,7 +166,6 @@
 
   &__spread {
     position: relative;
-    //   margin-bottom: 8px;
   }
 
   &__buy-value,
@@ -216,6 +179,7 @@
 
     position: relative;
     bottom: 8px;
+
     width: 0;
     height: 0;
     margin-right: 3px;
@@ -230,6 +194,7 @@
 
     position: relative;
     top: 10px;
+
     width: 0;
     height: 0;
     margin-right: 3px;
@@ -250,10 +215,8 @@
     margin-right: 1em;
   }
   @include flexible(flex-start, flex-start, column, nowrap);
-  // flex: 1 1 370px;
 
   width: 50%;
-  // max-width: 467px;
   max-height: 508px;
   margin: 0.5em;
   padding: 30px;
@@ -263,16 +226,19 @@
 
   &__title {
     @include main-section-title;
+
     margin-bottom: 20px;
   }
 
   &__actor {
     @include flexible(space-between, flex-start, row, nowrap);
+
     margin-top: 20px;
   }
 
   &__actor-photo-container {
     @include flexible(center, center, column, nowrap);
+
     width: 45px;
     margin-right: 1.5em;
   }
@@ -329,9 +295,10 @@
     width: 100%;
   }
 
-  width: 50%;
   display: flex;
   flex-direction: column;
+
+  width: 50%;
   margin-right: 0;
 }
 
@@ -351,23 +318,25 @@
 
   &__title {
     @include main-section-title;
+
     margin-bottom: 20px;
     text-align: left;
   }
 
-  &__list {
+  &__checkboxes {
     position: relative;
 
     display: flex;
     flex-direction: column;
     justify-content: stretch;
+
     width: 100%;
 
     overflow-y: scroll;
   }
 
   /* сustomize the label */
-  &__item {
+  &__container {
     
     display: flex;
     align-items: center;
@@ -382,53 +351,62 @@
     cursor: pointer;
   }
 
-  &__item .task {
+  &__container .task {
     @include text-gradient(to right);
+
     display: inline-block;
+
     min-width: 60px;
     max-width: 60px;
     margin-right: 10px;
-    font-weight: 700;
 
+    font-weight: 700;
   }
 
-  &__item .descr {
+  &__container .descr {
     display: inline-block;
     flex: auto;
     
     color: #BFBFBF;
     text-overflow: ellipsis;
-    // white-space: nowrap;
+    // white-space: nowrap; // при установке данного свойства текст обрезается, но блок перестает сжиматься и ломается адаптивная верстка
+
     overflow: hidden;
   }
 
   /* browser's default checkbox style reset */
-  &__item input {
+  &__container input {
     position: absolute;
-    opacity: 0;
-    cursor: pointer;
+
     height: 0;
     width: 0;
+
+    opacity: 0;
+    cursor: pointer;
   }
 
   /* checkbox layout */
   .checkmark {
     position: absolute;
     left: 0;
+
     height: 17px;
     width: 17px;
+    
     border-radius: 50%;
   }
 
   /* when the checkbox is checked, adds a $pc background */
-  &__item input:checked~.checkmark {
+  &__container input:checked~.checkmark {
     background-color: $primary-color;
+    
     transition: all 0.2s ease-in-out;
   }
 
-  &__item input:not(:checked)~.checkmark {
+  &__container input:not(:checked)~.checkmark {
     background-color: #BFBFBF;
     opacity: 1;
+    
     transition: all 0.2s ease-in-out;
   }
 
@@ -436,36 +414,43 @@
   .checkmark:after {
     content: "";
     position: absolute;
+
     display: block;
+    
     transform: scale(0);
   }
 
   /* show the checkmark when checked */
-  &__item input:checked~.checkmark:after {
+  &__container input:checked~.checkmark:after {
     display: block;
+
     transform: scale(1);
     transition: all 0.2s ease-in-out;
   }
 
-  &__item input:not(:checked)~.checkmark:after {
+  &__container input:not(:checked)~.checkmark:after {
     transform: scale(0);
     transition: all 0.2s ease-in-out;
   }
 
   /* checkmark indicator */
-  &__item .checkmark:after {
+  &__container .checkmark:after {
     left: 2px;
     top: 3px;
+
     width: 13px;
     height: 13px;
+    
     background-color: #FFFFFF;
     clip-path: polygon(21% 40%, 21% 40%, 8% 54%, 25% 68%, 36% 77%, 47% 65%, 48% 64%, 64% 47%, 75% 35%, 93% 13%, 81% 4%, 36% 54%);
   }
 
   &__time {
     position: relative;
+    
     display: inline-block;
     flex-shrink: 0;
+    
     width: 55px;
     margin-left: 25px;
     
@@ -481,10 +466,12 @@
     position: absolute;
     top: -5px;
     left: -21px;
+    
     display: block;
 
     width: 13px;
     height: 13px;
+    
     background: url(../img/main/clock.png) no-repeat center;
   }
 }
@@ -501,14 +488,11 @@
 // Progress **************************************************
 
 .scale {
+  @include flexible(space-between, center, column, nowrap);
   @include xs {
     width: 100%;
   }
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   flex: 0 3 auto;
   width: 50%;
   height: 245px;

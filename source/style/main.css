@@ -401,6 +401,71 @@ li {
   }
 }
 
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  padding: 0.5em;
+  background: #EDEDED;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 0;
+  }
+}
+
+.main__first-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 992px) {
+  .main__first-line {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.main__second-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 992px) {
+  .main__second-line {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .main__second-line {
+    padding-right: 0.5em;
+  }
+}
+
 .aside {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1127,72 +1192,6 @@ li {
   margin-right: 0;
 }
 
-.main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (max-width: 768px) {
-  .main {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-.main__first-line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (max-width: 992px) {
-  .main__first-line {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-.main__second-line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (max-width: 992px) {
-  .main__second-line {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-@media (max-width: 576px) {
-  .main__second-line {
-    padding-right: 0.5em;
-  }
-}
-
-.content {
-  background-color: red;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
-  padding: 0.5em;
-  background: #EDEDED;
-}
-
-@media (max-width: 768px) {
-  .content {
-    padding: 0;
-  }
-}
-
 .progress {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1276,9 +1275,9 @@ li {
 }
 
 .progress__more-information > span::before {
+  content: "";
   position: absolute;
   top: 0;
-  content: "";
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -1330,9 +1329,9 @@ li {
 
 .progress__picture {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   margin-bottom: 25px;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .progress__period-wrap {
@@ -1554,7 +1553,6 @@ li {
 }
 
 .box {
-  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1562,6 +1560,7 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 50%;
   margin-right: 0;
 }
 
@@ -1615,7 +1614,7 @@ li {
   text-align: left;
 }
 
-.todays-task__list {
+.todays-task__checkboxes {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1631,7 +1630,7 @@ li {
   overflow-y: scroll;
 }
 
-.todays-task__item {
+.todays-task__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1650,7 +1649,7 @@ li {
   cursor: pointer;
 }
 
-.todays-task__item .task {
+.todays-task__container .task {
   background: -webkit-gradient(linear, left top, right top, from(#FD5670), to(#EC6E54));
   background: linear-gradient(to right, #FD5670, #EC6E54);
   background-clip: text;
@@ -1663,7 +1662,7 @@ li {
   font-weight: 700;
 }
 
-.todays-task__item .descr {
+.todays-task__container .descr {
   display: inline-block;
   -webkit-box-flex: 1;
       -ms-flex: auto;
@@ -1673,12 +1672,12 @@ li {
   overflow: hidden;
 }
 
-.todays-task__item input {
+.todays-task__container input {
   position: absolute;
-  opacity: 0;
-  cursor: pointer;
   height: 0;
   width: 0;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .todays-task .checkmark {
@@ -1689,13 +1688,13 @@ li {
   border-radius: 50%;
 }
 
-.todays-task__item input:checked ~ .checkmark {
+.todays-task__container input:checked ~ .checkmark {
   background-color: #FD5670;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.todays-task__item input:not(:checked) ~ .checkmark {
+.todays-task__container input:not(:checked) ~ .checkmark {
   background-color: #BFBFBF;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1710,7 +1709,7 @@ li {
           transform: scale(0);
 }
 
-.todays-task__item input:checked ~ .checkmark:after {
+.todays-task__container input:checked ~ .checkmark:after {
   display: block;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -1718,14 +1717,14 @@ li {
   transition: all 0.2s ease-in-out;
 }
 
-.todays-task__item input:not(:checked) ~ .checkmark:after {
+.todays-task__container input:not(:checked) ~ .checkmark:after {
   -webkit-transform: scale(0);
           transform: scale(0);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.todays-task__item .checkmark:after {
+.todays-task__container .checkmark:after {
   left: 2px;
   top: 3px;
   width: 13px;
@@ -1780,16 +1779,18 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-flex: 0;
       -ms-flex: 0 3 auto;
           flex: 0 3 auto;
