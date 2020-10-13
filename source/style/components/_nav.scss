@@ -71,6 +71,12 @@
     color: #FFFFFF;
   }
 
+  
+  &__link:hover,
+  &__link:active {
+    background-color: #FD725D;
+  }
+
   &__link:hover::after,
   &__link:active::after {
     position: absolute;
@@ -133,7 +139,7 @@
     @include sm {
       display: block;
     }
-    
+
     position: relative;
 
     display: none;
