@@ -17,20 +17,19 @@
   
   display: flex;
 
-  & > div {
+  &__btn {
     position: relative;
 
     flex: auto;
     height: 48px;
   }
 
-  & > div:hover,
-  & > div:active {
+  & > div:hover {
     background-color: #C43E5B;
     cursor: pointer;
   }
 
-  & > div:hover::after {
+  &__btn:hover::after {
     content: '';
 
     position: absolute;
