@@ -96,10 +96,6 @@
     border-radius: 50%;
   }
 
-  &__button:hover {
-    transform: scale(1.2);
-  }
-
   // Search ****************************************
   .search {
     @include md {

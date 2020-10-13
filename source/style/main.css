@@ -898,11 +898,6 @@ li {
   }
 }
 
-.options__button:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
 .options .search {
   position: relative;
   display: -webkit-box;
