@@ -17,11 +17,7 @@
   }
 
   &__list {
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
-    flex-wrap: wrap;
-
+    @include flexible(space-between, space-between, row, wrap);
     @include sm {
       flex-wrap: nowrap;
       width: 290px;
