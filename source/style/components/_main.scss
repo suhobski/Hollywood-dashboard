@@ -494,15 +494,19 @@
   }
 
   flex: 0 3 auto;
+  
   width: 50%;
   height: 245px;
   margin: .5em;
   padding: 30px;
+  
   background-color: #FFFFFF;
 
   &__title {
     @include main-section-title;
+    
     margin-bottom: 2em;
+  
     text-align: left;
   }
 
@@ -510,7 +514,7 @@
     width: 100%;
     max-width: 150px;
     height: 88px;
-    margin-bottom: 23px;
+    margin-bottom: 12px;
   }
 
   &__spread {
@@ -519,6 +523,7 @@
 
   &__amount {
     @include text-gradient-secondary(to right);
+    
     font-size: 20px;
     font-weight: 700;
   }
@@ -540,7 +545,6 @@
     width: 100%;
   }
 
-  flex: 0 3 auto;
   width: 50%;
   margin-left: 0.5em;
   margin-right: 0;
@@ -556,10 +560,7 @@
   }
 
   &__description {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
+    @include flexible(space-between, flex-end, row, wrap);
 
     width: 100%;
     max-width: 200px;
@@ -570,7 +571,7 @@
     @extend .scale__amount;
 
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 5px;
 
     font-size: 20px;
     font-weight: 700;
@@ -579,6 +580,7 @@
   &__spread {
     @include flexible(space-between, flex-end, row, nowrap);
     @extend .revenue__spread;
+
     display: inline-block;
   }
 
