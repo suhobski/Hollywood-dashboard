@@ -1645,6 +1645,10 @@ li {
   cursor: pointer;
 }
 
+.todays-task__container:hover {
+  background-color: #FAFAFA;
+}
+
 .todays-task__container .task {
   background: -webkit-gradient(linear, left top, right top, from(#FD5670), to(#EC6E54));
   background: linear-gradient(to right, #FD5670, #EC6E54);

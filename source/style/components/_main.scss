@@ -351,6 +351,10 @@
     cursor: pointer;
   }
 
+  &__container:hover {
+    background-color: #FAFAFA;
+  }
+
   &__container .task {
     @include text-gradient(to right);
 
