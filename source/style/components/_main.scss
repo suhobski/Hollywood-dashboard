@@ -355,7 +355,7 @@
     text-align: left;
   }
 
-  &__checkboxes {
+  &__list {
     position: relative;
 
     display: flex;
@@ -367,7 +367,7 @@
   }
 
   /* сustomize the label */
-  &__container {
+  &__item {
     
     display: flex;
     align-items: center;
@@ -382,16 +382,17 @@
     cursor: pointer;
   }
 
-  &__container .task {
+  &__item .task {
     @include text-gradient(to right);
     display: inline-block;
     min-width: 60px;
+    max-width: 60px;
     margin-right: 10px;
     font-weight: 700;
 
   }
 
-  &__container .descr {
+  &__item .descr {
     display: inline-block;
     flex: auto;
     
@@ -402,7 +403,7 @@
   }
 
   /* browser's default checkbox style reset */
-  &__container input {
+  &__item input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -420,12 +421,12 @@
   }
 
   /* when the checkbox is checked, adds a $pc background */
-  &__container input:checked~.checkmark {
+  &__item input:checked~.checkmark {
     background-color: $primary-color;
     transition: all 0.2s ease-in-out;
   }
 
-  &__container input:not(:checked)~.checkmark {
+  &__item input:not(:checked)~.checkmark {
     background-color: #BFBFBF;
     opacity: 1;
     transition: all 0.2s ease-in-out;
@@ -440,19 +441,19 @@
   }
 
   /* show the checkmark when checked */
-  &__container input:checked~.checkmark:after {
+  &__item input:checked~.checkmark:after {
     display: block;
     transform: scale(1);
     transition: all 0.2s ease-in-out;
   }
 
-  &__container input:not(:checked)~.checkmark:after {
+  &__item input:not(:checked)~.checkmark:after {
     transform: scale(0);
     transition: all 0.2s ease-in-out;
   }
 
   /* checkmark indicator */
-  &__container .checkmark:after {
+  &__item .checkmark:after {
     left: 2px;
     top: 3px;
     width: 13px;

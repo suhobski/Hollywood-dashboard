@@ -1615,7 +1615,7 @@ li {
   text-align: left;
 }
 
-.todays-task__checkboxes {
+.todays-task__list {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1631,7 +1631,7 @@ li {
   overflow-y: scroll;
 }
 
-.todays-task__container {
+.todays-task__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1650,7 +1650,7 @@ li {
   cursor: pointer;
 }
 
-.todays-task__container .task {
+.todays-task__item .task {
   background: -webkit-gradient(linear, left top, right top, from(#FD5670), to(#EC6E54));
   background: linear-gradient(to right, #FD5670, #EC6E54);
   background-clip: text;
@@ -1658,11 +1658,12 @@ li {
   -webkit-text-fill-color: transparent;
   display: inline-block;
   min-width: 60px;
+  max-width: 60px;
   margin-right: 10px;
   font-weight: 700;
 }
 
-.todays-task__container .descr {
+.todays-task__item .descr {
   display: inline-block;
   -webkit-box-flex: 1;
       -ms-flex: auto;
@@ -1672,7 +1673,7 @@ li {
   overflow: hidden;
 }
 
-.todays-task__container input {
+.todays-task__item input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -1688,13 +1689,13 @@ li {
   border-radius: 50%;
 }
 
-.todays-task__container input:checked ~ .checkmark {
+.todays-task__item input:checked ~ .checkmark {
   background-color: #FD5670;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.todays-task__container input:not(:checked) ~ .checkmark {
+.todays-task__item input:not(:checked) ~ .checkmark {
   background-color: #BFBFBF;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1709,7 +1710,7 @@ li {
           transform: scale(0);
 }
 
-.todays-task__container input:checked ~ .checkmark:after {
+.todays-task__item input:checked ~ .checkmark:after {
   display: block;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -1717,14 +1718,14 @@ li {
   transition: all 0.2s ease-in-out;
 }
 
-.todays-task__container input:not(:checked) ~ .checkmark:after {
+.todays-task__item input:not(:checked) ~ .checkmark:after {
   -webkit-transform: scale(0);
           transform: scale(0);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.todays-task__container .checkmark:after {
+.todays-task__item .checkmark:after {
   left: 2px;
   top: 3px;
   width: 13px;
