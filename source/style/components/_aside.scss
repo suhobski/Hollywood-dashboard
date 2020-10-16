@@ -25,7 +25,7 @@
   }
 
   & > div:hover {
-    background-color: #C43E5B;
+    background-color: $hover-color;
     cursor: pointer;
   }
 
@@ -39,7 +39,7 @@
     width: 0;
     height: 0;
 
-    border-top: 6px solid #C43E5B;
+    border-top: 6px solid $hover-color;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
   }
