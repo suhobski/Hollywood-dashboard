@@ -8,6 +8,25 @@
   font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
+.nav {
+  @include background-gradient(to top);
+  @include flexible(initial, center, column, nowrap);
+  
+  @include sm {
+    @include background-gradient(to right);
+    
+    @include flexible(space-between, center, row, nowrap);
+    
+    min-height: 40px;
+    width: 100vw;
+  }
+
+  position: fixed;
+  z-index: 30;
+
+  min-height: 100vh;
+}
+
 .container {
   @include sm {
     display: flex;
