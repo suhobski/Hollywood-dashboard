@@ -96,6 +96,10 @@
     border-radius: 50%;
   }
 
+  &__button:hover {
+    background-color: #FAFAFA;;
+  }
+
   // Search ****************************************
   .search {
     @include md {
@@ -143,7 +147,12 @@
       border: none;
       outline: none;
     }
+
+    &:hover {
+      background-color: #FAFAFA;;
+    }
   }
+
 
   //person ****************************************
   .person {
@@ -231,6 +240,10 @@
 
       border-radius: 50%;
       background: #BFBFBF;
+    }
+    
+    &:hover {
+      background-color: #FAFAFA;;
     }
   }
 }

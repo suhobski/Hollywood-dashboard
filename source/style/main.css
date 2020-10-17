@@ -949,6 +949,10 @@ li {
   }
 }
 
+.options__button:hover {
+  background-color: #FAFAFA;
+}
+
 .options .search {
   position: relative;
   display: -webkit-box;
@@ -1016,6 +1020,10 @@ li {
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+.options .search:hover {
+  background-color: #FAFAFA;
 }
 
 .options .person {
@@ -1115,6 +1123,10 @@ li {
   height: 5px;
   border-radius: 50%;
   background: #BFBFBF;
+}
+
+.options .person:hover {
+  background-color: #FAFAFA;
 }
 
 .stactics {
