@@ -118,6 +118,8 @@
     border-left: 2px solid #F1F1F1;
   
     &__input {
+      position: relative;
+
       min-width: 300px;
       height: 34px;
       padding: 12px;
@@ -130,6 +132,10 @@
     }
 
     &__input::placeholder {
+      position: relative;
+
+      top: -2px;
+      left: 0;
       font-size: 12px;
       color: #C8C8C8;
     }
@@ -241,7 +247,7 @@
       border-radius: 50%;
       background: #BFBFBF;
     }
-    
+
     &:hover {
       background-color: #FAFAFA;;
     }
